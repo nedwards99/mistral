@@ -43,6 +43,7 @@ from src.models import get_auto_clm_tokenizer
 from src.overwatch import get_overwatch
 from src.util import create_paths, set_permissions
 
+os.environ["WANDB_DISABLED"] = "true"
 
 def train() -> OnlineBenchmarkTrainer:
     # Parse Quinfig (via Quinine Argparse Binding)
