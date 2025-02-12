@@ -77,6 +77,7 @@ def get_auto_clm_tokenizer(
     # If `initial_weights` is not None, load weights from path!
     if initial_weights is not None:
         overwatch.info(f"Initializing Weights from File: `{initial_weights}`...")
-        model.load_state_dict(torch.load(initial_weights, map_location=torch.device("cpu")))
+        #model.load_state_dict(torch.load(initial_weights, map_location=torch.device("cpu")))
+        model = GPT2LMHeadModel.from_pretrained(initial_weights)
 
     return model, tokenizer
